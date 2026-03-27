@@ -1,8 +1,7 @@
 {
   "profiles": {
     "AutoPounch_V3": {
-      "commandName": "Project",
-      "commandLineArgs": "0"
+      "commandName": "Project"
     }
   }
 }
