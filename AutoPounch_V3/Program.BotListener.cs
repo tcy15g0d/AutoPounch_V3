@@ -43,7 +43,9 @@ namespace AutoPounch_V3
 
                         string? text = message["text"]?.Value<string>();
                         long chatId = message["chat"]!["id"]!.Value<long>();
-                        string? username = message["from"]?["username"]?.Value<string>() ?? "unknown";
+                        string? username = message["from"]?["username"]?.Value<string>()
+                            ?? message["from"]?["first_name"]?.Value<string>()
+                            ?? "unknown";
 
                         if (text == "/start" || text?.StartsWith("/start@") == true)
                         {
