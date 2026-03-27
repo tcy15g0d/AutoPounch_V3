@@ -11,6 +11,7 @@ namespace AutoPounch_V3.Models
         public string? id { get; set; }
         public string? pw { get; set; }
         public string? line { get; set; }
+        public string? telegram { get; set; }
 
         public User() { }
         public User(string id, string pwd)
@@ -18,17 +19,20 @@ namespace AutoPounch_V3.Models
             this.id = id;
             this.pw = pwd;
             this.line = "";
+            this.telegram = "";
         }
         public User(string id, string pwd, string line)
         {
             this.id = id;
             this.pw = pwd;
             this.line = line;
+            this.telegram = "";
         }
 
     }
     internal class Users
     {
         public List<User>? users { get; set; }
+        public string? telegram_token { get; set; }
     }
 }

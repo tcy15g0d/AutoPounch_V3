@@ -12,7 +12,7 @@ namespace AutoPounch_V3
 {
     internal partial class Program
     {
-        static async Task Pounch(HttpClient httpClient,int parameterValue)
+        static async Task<string> Pounch(HttpClient httpClient, int parameterValue)
         {
             //
 
@@ -38,20 +38,20 @@ namespace AutoPounch_V3
             string responseContent = await response.Content.ReadAsStringAsync();
             
             ResultMsg resultMsg = ReadContent(responseContent);
-            if(resultMsg.result != 1 )
+            if (resultMsg.result != 1)
             {
-                Console.ForegroundColor = ConsoleColor.Red; // 設定文字顏色為紅色
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"【簽到失敗】：{resultMsg.msg}");
-                Console.ResetColor(); // 恢復預設文字顏色
+                Console.ResetColor();
+                return $"失敗：{resultMsg.msg}";
             }
-            else if(resultMsg.result == 0 )
+            else
             {
-                Console.ForegroundColor = ConsoleColor.Green; // 設定文字顏色為紅色
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"【簽到成功】：{resultMsg.msg}");
-                Console.ResetColor(); // 恢復預設文字顏色
+                Console.ResetColor();
+                return $"成功：{resultMsg.msg}";
             }
-
-
         }
     }
 }

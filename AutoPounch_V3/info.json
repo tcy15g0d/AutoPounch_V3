@@ -1,14 +1,17 @@
 {
+  "telegram_token": "8648305367:AAF3F-reNdJCbC343adUq3HrZ9kRnGN44Lo",
   "users":[
     {
-      "id": "XXXXXXXX",
-      "pw": "XXXXXXXX",
-      "line": ""
+      "id": "XXXXXXXX(學號)",
+      "pw": "XXXXXXXX(密碼)",
+      "line": "",
+      "telegram": "XXXXXXXXXX(10碼)"
     },
     {
       "id": "",
       "pw": "",
-      "line": ""
+      "line": "",
+      "telegram": ""
     }
   ]
 }
